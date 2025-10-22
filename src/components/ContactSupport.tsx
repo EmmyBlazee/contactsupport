@@ -43,6 +43,8 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
     if (!form.name.trim()) newErrors.name = "Name is required.";
     if (!form.email.trim()) newErrors.email = "Email is required.";
     else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = "Email is invalid.";
+    if (!form.orderId.trim()) newErrors.orderId = "Order ID is required.";
+    if (!form.category.trim()) newErrors.category = "Category is required.";
     if (!form.message.trim()) newErrors.message = "Message is required.";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -107,15 +109,16 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <Label htmlFor="orderId">Order ID (optional)</Label>
+              <Label htmlFor="orderId">Order ID</Label>
               <Input
                 id="orderId"
                 type="text"
                 placeholder="e.g., ORD-12345"
                 value={form.orderId}
                 onChange={(e) => setForm((f) => ({ ...f, orderId: e.target.value }))}
-                className="bg-white"
+                className={cn("bg-white", errors.orderId && "border-red-500")}
               />
+              {errors.orderId && <p className="text-xs text-red-600">{errors.orderId}</p>}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="category">Category</Label>
@@ -123,14 +126,15 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
                 id="category"
                 value={form.category}
                 onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
-                className="w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className={cn("w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400", errors.category && "border-red-500")}
               >
                 <option value="">Select a category</option>
-                
+
                 <option value="billing">Payment</option>
-                <option value="account">Order Delay</option>
+                <option value="account">Orders</option>
                 <option value="other">Other</option>
               </select>
+              {errors.category && <p className="text-xs text-red-600">{errors.category}</p>}
             </div>
           </div>
 
@@ -144,7 +148,7 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
                 <input
                   id="attachment"
                   type="file"
-                  className="hidden"
+                  className="hidden bg-orange-500"
                   onChange={(e) => setForm((f) => ({ ...f, attachment: e.target.files?.[0] || null }))}
                 />
               </label>
