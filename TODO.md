@@ -1,0 +1,4 @@
+- [x] Import LeaveReview component in src/app/page.tsx
+- [x] Add useState for toggling between 'support' and 'review' views
+- [x] Add a toggle button at the top of the page
+- [x] Conditionally render ContactSupport or LeaveReview based on the current view state

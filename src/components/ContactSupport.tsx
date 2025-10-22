@@ -138,7 +138,7 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
           <div className="space-y-1.5">
             <Label htmlFor="attachment">Attachment (optional)</Label>
             <div className="flex items-center gap-2">
-              <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
+              <label className="inline-flex cursor-pointer bg-orange-500  items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
                 <PaperClipIcon className="h-4 w-4" />
                 <span>Upload file</span>
                 <input
