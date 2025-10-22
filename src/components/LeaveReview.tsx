@@ -90,30 +90,8 @@ export default function LeaveReview({ productName = "", orderId = "", className 
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-1.5">
-              <Label htmlFor="productName">Product/Course (optional)</Label>
-              <Input
-                id="productName"
-                type="text"
-                placeholder="e.g., React Bootcamp"
-                value={form.productName}
-                onChange={(e) => setForm((f) => ({ ...f, productName: e.target.value }))}
-                className="bg-white"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="orderId">Order ID (optional)</Label>
-              <Input
-                id="orderId"
-                type="text"
-                placeholder="e.g., ORD-12345"
-                value={form.orderId}
-                onChange={(e) => setForm((f) => ({ ...f, orderId: e.target.value }))}
-                className="bg-white"
-              />
-            </div>
-          </div>
+        
+            
 
           <div className="space-y-1.5">
             <Label>Rating</Label>
