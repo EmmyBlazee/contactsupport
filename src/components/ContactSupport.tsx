@@ -74,7 +74,7 @@ export default function ContactSupport({ orderId, email, className }: ContactSup
         <div className="text-center mb-8">
           <SupportIcon className="h-12 w-12 text-orange-500 mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-neutral-900">Contact Support</h1>
-          <p className="text-neutral-600 mt-2">We're here to help. Fill out the form below and we'll get back to you soon.</p>
+          <p className="text-neutral-600 mt-2">We&apos;re here to help. Fill out the form below and we&apos;ll get back to you soon.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
